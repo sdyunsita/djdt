@@ -279,7 +279,7 @@ export default {
         str_min = "0" + n_min;
       }
 
-      var time =  str_min + ":" + str_sec;
+      var time =  str_min + "分" + str_sec+"秒";
       ele_timer.value = time;
       console.log(ele_timer.value)
       n_sec++;

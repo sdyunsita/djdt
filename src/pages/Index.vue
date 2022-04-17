@@ -26,7 +26,8 @@
         />
       </div>
     </div>
-    <span class="copy">NSITA-UED提供技术支持</span>
+    <span class="copy">
+      <div>信息工程学院</div>NSITA-UED提供技术支持</span>
   </q-page>
 </template>
 
@@ -35,10 +36,18 @@
   text-align: center !important;
   border-radius: 15px !important;
 }
+</style>
+<style lang="scss" scoped>
+
 .copy{
   position: absolute;
   bottom: 10px;
   color: gray;
+  text-align: center;
+  div{
+    font-size: 1.5rem;
+    color: black;
+  }
 }
 </style>
 <script>

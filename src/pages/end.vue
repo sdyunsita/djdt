@@ -4,7 +4,7 @@
     <div class="main">
       <div class="info">
         <div class="cc">
-          {{ name }}同学，恭喜你完成校园跑活动并在红色知识答题站处取得优异成绩！
+          {{ name }} 同学<br>祝贺你在“信息工程学院--红色教育答题站”<br>取得优异成绩！
         </div>
         得分:{{ score }}<br />
         <div>用时:{{ time }}</div>
@@ -25,7 +25,7 @@ img {
   text-align: center;
   position: absolute;
   width: 80%;
-  bottom: 25%;
+  bottom: 18%;
   .info {
     color: rgba(255, 141, 26, 1);
     font-size: 1.8rem;
@@ -38,7 +38,7 @@ img {
 .xy {
   position: absolute;
   bottom: 5vh;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   .txt {
     font-size: 1rem;
