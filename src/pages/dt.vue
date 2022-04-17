@@ -304,6 +304,7 @@ export default {
 
     onMounted(() => {
       if (typeof sname == "undefined") {
+        clearInterval(timer);
         router.push("/");
       }
       currentdata.data = data[0];

@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center">
     <div class="title">
-      <img style="margin-top: 50px;width:100%"  src="/title.webp" alt="" srcset="" />
+      <img alt="" src="/title.webp" srcset="" style="margin-top: 50px;width:100%"/>
     </div>
     <div class="row" style="margin-top: -310px">
       <div class="col-12 flex flex-center" style="margin-bottom: 50px">
@@ -13,7 +13,7 @@
       </div>
       <div class="col-12 flex flex-center">
         <q-btn
-          @click="begin"
+          label="开始答题"
           style="
             background: #f0d044;
             color: #ff0000;
@@ -22,7 +22,7 @@
             padding: 10px 40px;
             border-radius: 15px;
           "
-          label="开始答题"
+          @click="begin"
         />
       </div>
     </div>
@@ -39,20 +39,22 @@
 </style>
 <style lang="scss" scoped>
 
-.copy{
+.copy {
   position: absolute;
   bottom: 10px;
   color: gray;
   text-align: center;
-  div{
+
+  div {
     font-size: 1.5rem;
     color: black;
   }
 }
 </style>
 <script>
-import { defineComponent, ref } from "vue";
-import { useRouter } from "vue-router";
+import {defineComponent, ref} from "vue";
+import {useRouter} from "vue-router";
+import {api} from 'boot/axios'
 
 export default defineComponent({
   name: "PageIndex",
@@ -60,26 +62,34 @@ export default defineComponent({
     const iname = ref("");
 
     //日期判断
-    var d = new Date();
-    var a= d.getDate()
-    console.log(a)
+    const time = ref('')
+    const m = ref('')
+    api.get("https://api.m.jd.com/client.action?functionId=queryMaterialProducts&client=wh5").then((res) => {
+      time.value = res['data']['currentTime'].slice(8,10)
+      // time.value = 20
+      // m.value = 5
+      m.value = res['data']['currentTime'].slice(6, 7)
+    });
     let router = useRouter();
     const begin = () => {
-      if (iname.value == "") {
-        alert("请输入姓名");
-      }else if(a < 21){
-        alert("未到活动开始时间")
-      }else {
-        router.push({
-          name: "dt",
-          params: {
-            name: iname.value,
-          },
-        });
+        if (iname.value == "") {
+          alert("请输入姓名");
+        } else {
+          if ((m.value < 4) || (time.value < 21)) {
+            alert("未到活动开始时间")
+          } else {
+            router.push({
+              name: "dt",
+              params: {
+                name: iname.value,
+              },
+            });
+          }
+        }
       }
-    };
+    ;
 
-    return { iname, begin };
+    return {iname, begin};
   },
 });
 </script>
