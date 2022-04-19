@@ -4,10 +4,9 @@
     <div class="main">
       <div class="info">
         <div class="cc">
-          {{ name }} 同学<br>祝贺你在“信息工程学院--红色教育答题站”<br>取得优异成绩！
+          {{ name }} 同学，祝贺您在<br>“悦动校园跑“--红色教育答题站<br>取得优异成绩！
         </div>
-        得分:{{ score }}<br />
-        <div>用时:{{ time }}</div>
+        <div class="ss">得分:{{ score }}<br />用时:{{ time }}</div>
       </div>
     </div>
     <div class="xy">
@@ -25,13 +24,16 @@ img {
   text-align: center;
   position: absolute;
   width: 80%;
-  bottom: 18%;
+  bottom: 22%;
   .info {
-    color: rgba(233, 204, 26, 1);
-    font-size: 1.7rem;
+    color: #6a685c;
+    font-size: 1.5rem;
     font-weight: 600;
     .cc {
       margin-bottom: 4vh;
+    }
+    .ss{
+      color: red;
     }
   }
 }

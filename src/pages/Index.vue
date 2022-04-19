@@ -4,7 +4,7 @@
       <img alt="" src="/title.webp" srcset="" style="margin-top: 50px;width:100%"/>
     </div>
     <div class="row" style="margin-top: -310px">
-      <div class="col-12 flex flex-center" style="margin-bottom: 50px">
+      <div class="col-12 flex flex-center" style="margin-bottom: 2rem">
         <q-input
           v-model="iname"
           placeholder="请输入姓名"
@@ -75,7 +75,7 @@ export default defineComponent({
         if (iname.value == "") {
           alert("请输入姓名");
         } else {
-          if ((m.value < 4) || (time.value < 21)) {
+          if ((m.value < 4) || !(time.value < 21)) {
             alert("未到活动开始时间")
           } else {
             router.push({
