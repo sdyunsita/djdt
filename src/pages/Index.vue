@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <div class="title">
+    <div class="title" style="visibility:hidden">
       <img alt="" src="/title.webp" srcset="" style="margin-top: 50px;width:100%"/>
     </div>
     <div class="row" style="margin-top: -310px">

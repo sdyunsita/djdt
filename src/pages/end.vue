@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <img style="width: 328px; height: 178px" src="/result.webp" />
+    <img style="width: 328px; height: 178px;visibility: hidden" src="/result.webp" />
     <div class="main">
       <div class="info">
         <div class="cc">
@@ -27,11 +27,11 @@ img {
   width: 80%;
   bottom: 18%;
   .info {
-    color: rgba(255, 141, 26, 1);
-    font-size: 1.8rem;
-    font-weight: 500;
+    color: rgba(233, 204, 26, 1);
+    font-size: 1.7rem;
+    font-weight: 600;
     .cc {
-      margin-bottom: 6vh;
+      margin-bottom: 4vh;
     }
   }
 }
