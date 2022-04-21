@@ -59,11 +59,17 @@ export default defineComponent({
   setup() {
     const iname = ref("");
 
+    //日期判断
+    var d = new Date();
+    var a= d.getDate()
+    console.log(a)
     let router = useRouter();
     const begin = () => {
       if (iname.value == "") {
         alert("请输入姓名");
-      } else {
+      }else if(a < 21){
+        alert("未到活动开始时间")
+      }else {
         router.push({
           name: "dt",
           params: {
